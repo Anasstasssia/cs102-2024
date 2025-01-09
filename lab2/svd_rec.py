@@ -9,34 +9,16 @@ from surprise import accuracy
 
 def ratings_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     """Функция для предобработки таблицы Ratings.scv"""
-    df = df.copy()
-
-    # Удаление нулевых рейтингов
-    df = df[df['Book-Rating'] != 0]
-    # Задаем минимально кол-во
-    min_books_ratings = 2
-    
-    # Рассчитываем средний рейтинг для каждой книги
-    book_avg_ratings = df.groupby('ISBN')['Book-Rating'].mean()
-    
-    # Заменяем индивидуальные рейтинги на средние для книги
-    df['Book-Rating'] = df['ISBN'].map(book_avg_ratings)
-    
-    # Рассчитываем число оценок для каждой книги
-    book_ratings_count = df.groupby('ISBN')['Book-Rating'].count()
-    
-    # Добавляем количество оценок к исходным данным
-    df['Book-Ratings-Count'] = df['ISBN'].map(book_ratings_count)
-    
-    # Фильтруем книги, у которых меньше min_books_ratings оценок
-    df = df[df['Book-Ratings-Count'] >= min_books_ratings]
-    
-    # Удалим пользователей, которые поставили меньше min_books_ratings оценок
-    user_ratings_count = df.groupby('User-ID')['Book-Rating'].count()
-    good_users = user_ratings_count[user_ratings_count >= min_books_ratings].index
-    df = df[df['User-ID'].isin(good_users)]
-    
-    return df
+    ratings = df.rename(columns={'Book-Rating': 'Rating'})
+    ratings['Rating'] = ratings['Rating'].astype(float)
+    ratings = ratings.query("Rating != 0.0")
+    min_ratings = 2
+    book_counts = ratings.groupby('ISBN')['User-ID'].nunique()
+    user_counts = ratings.groupby('User-ID')['ISBN'].nunique()
+    good_books = book_counts[book_counts >= min_ratings].index
+    good_users = user_counts[user_counts >= min_ratings].index
+    filtered1_ratings = ratings[(ratings['ISBN'].isin(good_books)) & (ratings['User-ID'].isin(good_users))]
+    return filtered1_ratings
 
 
 def modeling(ratings: pd.DataFrame) -> None:
@@ -48,7 +30,16 @@ def modeling(ratings: pd.DataFrame) -> None:
     reader = Reader(rating_scale=(1, 10))
     data = Dataset.load_from_df(ratings[['User-ID', 'ISBN', 'Rating']], reader)
     train_set, test_set = train_test_split(data, test_size=0.3)
-    svd = SVD(n_factors=128, n_epochs=15, verbose=True)
+    svd = SVD(n_factors=50, n_epochs=30, lr_all = 0.005, reg_all = 0.1)
     svd.fit(train_set)
+    predictions = svd.test(test_set)
+    predictions = svd.test(test_set)
+    mae = accuracy.mae(predictions)
+
     with open("svd.pkl", "wb") as file:
         pickle.dump(svd, file)
+
+
+# test = pd.read_csv("Ratings.csv")
+# test_1 = ratings_preprocessing(test)
+# modeling(test_1)

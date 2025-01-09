@@ -1,0 +1,222 @@
+Personal Book Recommendations:
+
+Title: The Lion, the Witch and the Wardrobe (Full-Color Collector's Edition)
+Linear Regression Prediction: 3.24
+SVD Prediction: 8.11
+----------------------------------------
+Title: A Swiftly Tilting Planet
+Linear Regression Prediction: 3.22
+SVD Prediction: 9.10
+----------------------------------------
+Title: Harry Potter and the Chamber of Secrets (Book 2)
+Linear Regression Prediction: 3.21
+SVD Prediction: 8.18
+----------------------------------------
+Title: The Giver (21st Century Reference)
+Linear Regression Prediction: 3.21
+SVD Prediction: 8.02
+----------------------------------------
+Title: The Hobbit : The Enchanting Prelude to The Lord of the Rings
+Linear Regression Prediction: 3.15
+SVD Prediction: 8.46
+----------------------------------------
+Title: Goodnight Moon Board Book
+Linear Regression Prediction: 3.02
+SVD Prediction: 8.08
+----------------------------------------
+Title: The Tao of Pooh
+Linear Regression Prediction: 3.02
+SVD Prediction: 8.07
+----------------------------------------
+Title: Harry Potter and the Sorcerer's Stone (Harry Potter (Paperback))
+Linear Regression Prediction: 3.01
+SVD Prediction: 8.23
+----------------------------------------
+Title: James and the Giant Peach
+Linear Regression Prediction: 2.92
+SVD Prediction: 8.19
+----------------------------------------
+Title: Sanctuary
+Linear Regression Prediction: 2.89
+SVD Prediction: 8.21
+----------------------------------------
+Title: The Phantom Tollbooth
+Linear Regression Prediction: 2.88
+SVD Prediction: 8.27
+----------------------------------------
+Title: The Color Purple
+Linear Regression Prediction: 2.88
+SVD Prediction: 8.44
+----------------------------------------
+Title: She Said Yes : The Unlikely Martyrdom of Cassie Bernall
+Linear Regression Prediction: 2.87
+SVD Prediction: 8.14
+----------------------------------------
+Title: The Witching Hour (Lives of the Mayfair Witches)
+Linear Regression Prediction: 2.87
+SVD Prediction: 8.08
+----------------------------------------
+Title: A Prayer for Owen Meany
+Linear Regression Prediction: 2.87
+SVD Prediction: 8.16
+----------------------------------------
+Title: Girl with a Pearl Earring
+Linear Regression Prediction: 2.87
+SVD Prediction: 8.22
+----------------------------------------
+Title: One Flew Over the Cuckoo's Nest
+Linear Regression Prediction: 2.87
+SVD Prediction: 8.09
+----------------------------------------
+Title: The Cat Who Blew the Whistle
+Linear Regression Prediction: 2.86
+SVD Prediction: 8.05
+----------------------------------------
+Title: Charlotte's Web (Trophy Newbery)
+Linear Regression Prediction: 2.85
+SVD Prediction: 9.21
+----------------------------------------
+Title: Interview with the Vampire
+Linear Regression Prediction: 2.85
+SVD Prediction: 8.23
+----------------------------------------
+Title: On the Banks of Plum Creek
+Linear Regression Prediction: 2.84
+SVD Prediction: 8.42
+----------------------------------------
+Title: The Talisman
+Linear Regression Prediction: 2.83
+SVD Prediction: 8.29
+----------------------------------------
+Title: The Brethren
+Linear Regression Prediction: 2.81
+SVD Prediction: 8.66
+----------------------------------------
+Title: Inferno (Mentor)
+Linear Regression Prediction: 2.80
+SVD Prediction: 8.53
+----------------------------------------
+Title: Into Thin Air : A Personal Account of the Mount Everest Disaster
+Linear Regression Prediction: 2.80
+SVD Prediction: 8.80
+----------------------------------------
+Title: Lonesome Dove
+Linear Regression Prediction: 2.79
+SVD Prediction: 8.04
+----------------------------------------
+Title: Yukon Ho!
+Linear Regression Prediction: 2.77
+SVD Prediction: 8.04
+----------------------------------------
+Title: Are You There God?  It's Me, Margaret
+Linear Regression Prediction: 2.77
+SVD Prediction: 8.27
+----------------------------------------
+Title: The Prince of Tides
+Linear Regression Prediction: 2.77
+SVD Prediction: 8.02
+----------------------------------------
+Title: She's Come Undone (Oprah's Book Club (Paperback))
+Linear Regression Prediction: 2.76
+SVD Prediction: 8.07
+----------------------------------------
+Title: Intensity
+Linear Regression Prediction: 2.75
+SVD Prediction: 8.42
+----------------------------------------
+Title: Frindle
+Linear Regression Prediction: 2.73
+SVD Prediction: 8.43
+----------------------------------------
+Title: The Firm
+Linear Regression Prediction: 2.73
+SVD Prediction: 8.21
+----------------------------------------
+Title: October Sky: A Memoir
+Linear Regression Prediction: 2.73
+SVD Prediction: 8.19
+----------------------------------------
+Title: Little House in the Big Woods
+Linear Regression Prediction: 2.70
+SVD Prediction: 8.52
+----------------------------------------
+Title: Garfield Chews the Fat (Garfield (Numbered Paperback))
+Linear Regression Prediction: 2.70
+SVD Prediction: 8.17
+----------------------------------------
+Title: Lightning
+Linear Regression Prediction: 2.70
+SVD Prediction: 8.04
+----------------------------------------
+Title: Bridge to Terabithia
+Linear Regression Prediction: 2.68
+SVD Prediction: 8.15
+----------------------------------------
+Title: Winter Solstice
+Linear Regression Prediction: 2.66
+SVD Prediction: 8.80
+----------------------------------------
+Title: All Around the Town
+Linear Regression Prediction: 2.66
+SVD Prediction: 8.21
+----------------------------------------
+Title: Betrayal in Death
+Linear Regression Prediction: 2.65
+SVD Prediction: 8.11
+----------------------------------------
+Title: Little House on the Prairie
+Linear Regression Prediction: 2.64
+SVD Prediction: 8.03
+----------------------------------------
+Title: Santa's Toy Shop
+Linear Regression Prediction: 2.61
+SVD Prediction: 8.08
+----------------------------------------
+Title: All That Remains (Kay Scarpetta Mysteries (Paperback))
+Linear Regression Prediction: 2.60
+SVD Prediction: 8.15
+----------------------------------------
+Title: A Wrinkle In Time
+Linear Regression Prediction: 2.59
+SVD Prediction: 8.02
+----------------------------------------
+Title: G Is for Gumshoe (Kinsey Millhone Mysteries (Paperback))
+Linear Regression Prediction: 2.59
+SVD Prediction: 8.25
+----------------------------------------
+Title: The Joy Luck Club
+Linear Regression Prediction: 2.59
+SVD Prediction: 8.15
+----------------------------------------
+Title: By the Shores of Silver Lake (Little House)
+Linear Regression Prediction: 2.58
+SVD Prediction: 8.25
+----------------------------------------
+Title: Little Town on the Prairie
+Linear Regression Prediction: 2.57
+SVD Prediction: 8.25
+----------------------------------------
+Title: A Wrinkle in Time
+Linear Regression Prediction: 2.56
+SVD Prediction: 8.19
+----------------------------------------
+Title: A Time to Kill
+Linear Regression Prediction: 2.56
+SVD Prediction: 8.33
+----------------------------------------
+Title: The Promise
+Linear Regression Prediction: 2.55
+SVD Prediction: 8.45
+----------------------------------------
+Title: Love You Forever
+Linear Regression Prediction: 2.31
+SVD Prediction: 8.37
+----------------------------------------
+Title: Night
+Linear Regression Prediction: 2.30
+SVD Prediction: 8.34
+----------------------------------------
+Title: Angels Everywhere: A Season of Angels/Touched by Angels (Avon Romance)
+Linear Regression Prediction: 2.24
+SVD Prediction: 8.30
+----------------------------------------

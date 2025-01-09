@@ -15,6 +15,7 @@ from sklearn.linear_model import LogisticRegression
 nltk.download("stopwords")
 nltk.download("punkt")
 
+
 def fix_merged_columns(row):
     merged_value = row['Book-Title']
     pattern = r'^(.+?)\\";(.+)"$'
@@ -24,6 +25,7 @@ def fix_merged_columns(row):
         return author.strip(), title.strip()
     else:
         return None, None
+
 
 def books_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     """Функция для предобработки таблицы Books.scv"""
@@ -36,8 +38,8 @@ def books_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
 
     # Применяем функцию исправления данных
     new_sort = df[~mask]
-    fixed_df = new_sort.apply(lambda x: fix_merged_columns(x), axis=1)
-    new_sort['Book-Author'], new_sort['Book-Title'] = zip(*fixed_df)
+    fixed_columns = new_sort.apply(lambda x: fix_merged_columns(x), axis=1)
+    new_sort.loc[:, ['Book-Author', 'Book-Title']] = pd.DataFrame(fixed_columns.tolist(), index=new_sort.index)
 
     df = pd.concat([books_filtered, new_sort])
     # Удаляем строки с будущими годами публикации
@@ -52,8 +54,6 @@ def books_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     df['Publisher'] = df['Publisher'].fillna('Unknown')
 
     return df
-
-
 
 
 def ratings_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
@@ -125,18 +125,18 @@ def modeling(books: pd.DataFrame, ratings: pd.DataFrame) -> None:
     final_df = books.merge(avg_ratings, on='ISBN', how='inner')
     X = final_df[numerical_features + categorical_features]
     y = final_df['Book-Rating']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, random_state=42)
-    vectorizer = TfidfVectorizer(max_features=1003)
-    titles = final_df['Book-Title']  
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
+    vectorizer = TfidfVectorizer(max_features=1000)
+    titles = final_df['Book-Title']
     X_titles_train = vectorizer.fit_transform(titles.iloc[X_train.index])
     X_titles_test = vectorizer.transform(titles.iloc[X_test.index])
-    
+
     X_train = pd.concat([X_train.reset_index(drop=True), pd.DataFrame(X_titles_train.toarray())], axis=1)
     X_test = pd.concat([X_test.reset_index(drop=True), pd.DataFrame(X_titles_test.toarray())], axis=1)
     X_train.columns = X_train.columns.astype(str)
     X_test.columns = X_test.columns.astype(str)
-    
-    linreg = SGDRegressor()
+
+    linreg = SGDRegressor(random_state=10)
     linreg.fit(X_train, y_train)
 
     # Тестирование модели и вывод метрик
@@ -147,8 +147,9 @@ def modeling(books: pd.DataFrame, ratings: pd.DataFrame) -> None:
         pickle.dump(linreg, file)
 
 
-books1 = pd.read_csv("Books.csv")
-ratings1 = pd.read_csv("Ratings.csv")
-filtered_ratings1 = ratings_preprocessing(ratings1)
-filtered_books1 = books_preprocessing(books1)
-modeling(filtered_books1, filtered_ratings1)
+# books1 = pd.read_csv("Books.csv")
+# ratings1 = pd.read_csv("Ratings.csv")
+# filtered_ratings1 = ratings_preprocessing(ratings1)
+# filtered_books1 = books_preprocessing(books1)
+# 
+# modeling(filtered_books1, filtered_ratings1)

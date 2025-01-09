@@ -83,6 +83,18 @@ filtered_books["LinReg-Pr"] = lin_reg_predictions_unscaled
 filtered_books["SVD_Pr"] = [pr for isbn, pr in recommendations if isbn in filtered_books["ISBN"].tolist()]
 final_recommendations = filtered_books.sort_values(by=["LinReg-Pr"], ascending=False)
 print(final_recommendations[["Book-Title", "LinReg-Pr", "SVD_Pr"]])
+
+# Запись рекомендаций в текстовый файл
+output_file = "personal_recommendation_text_file.txt"
+with open(output_file, "w", encoding="utf-8") as f:
+    f.write("Personal Book Recommendations:\n\n")
+    for _, row in final_recommendations.iterrows():
+        f.write(f"Title: {row['Book-Title']}\n")
+        f.write(f"Linear Regression Prediction: {row['LinReg-Pr']:.2f}\n")
+        f.write(f"SVD Prediction: {row['SVD_Pr']:.2f}\n")
+        f.write("-" * 40 + "\n")
+
+# Сохранение моделей
 with open("model3.pkl", "wb") as f:
     pickle.dump(svd, f)
 with open("model4.pkl", "wb") as f:
